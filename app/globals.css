@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-theme: #F2BBD7;
+  --color-semipink: #F083BB;
+  --font-spring: "FontspringBd", "sans-serif";
+  --font-instrument: "Instrument", "sans-serif"
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Kumbh, sans-serif;
+}
+
+@font-face {
+  font-family: FontspringBd;
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("/fonts/Fontspring-bd.otf") format("otf");
+}
+
+@font-face {
+  font-family: Instrument;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/instrument-reg.ttf")
+}
+
+@font-face {
+  font-family: Kumbh;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/Kumbh-reg.ttf")
+}
