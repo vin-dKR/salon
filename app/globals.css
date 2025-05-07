@@ -9,7 +9,9 @@
   --color-theme: #F2BBD7;
   --color-semipink: #F083BB;
   --font-spring: "FontspringBd", "sans-serif";
-  --font-instrument: "Instrument", "sans-serif"
+  --font-instrument: "Instrument", "sans-serif";
+  --font-disca: "Disca", "sans-serif";
+  --font-thebocone: "TheBocone", "sans-serif";
 }
 
 @theme inline {
@@ -54,4 +56,20 @@ body {
   font-weight: 200 700;
   font-display: swap;
   src: url("/fonts/Kumbh-reg.ttf")
+}
+
+@font-face {
+  font-family: TheBocone;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/TheBocone.otf")
+}
+
+@font-face {
+  font-family: Disca;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/disca.otf")
 }
