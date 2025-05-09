@@ -1,8 +1,3 @@
-interface NavData {
-    name: string,
-    href: string
-}
-
 export const navData: NavData[] = [
     {
         name: "service",

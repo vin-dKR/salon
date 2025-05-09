@@ -57,8 +57,6 @@ const LandingHome = () => {
                 </p>
             </div>
 
-            <div className="">
-            </div>
         </div>
     )
 }
