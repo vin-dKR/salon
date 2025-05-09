@@ -1,0 +1,19 @@
+export default function InnerParabola() {
+    return (
+        <div className="">
+            <svg className="absolute top-[500px] w-full" width="1440" height="1228" viewBox="0 0 1440 1228" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_f_4_42)">
+                    <path d="M-7 400H1438L1433 828C1433 828 1035.33 420.615 712 421C389.348 421.384 -7 828 -7 828V400Z" fill="white" />
+                </g>
+                <defs>
+                    <filter id="filter0_f_4_42" x="-407" y="0" width="2245" height="1228" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="200" result="effect1_foregroundBlur_4_42" />
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    )
+}

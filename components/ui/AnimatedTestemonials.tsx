@@ -1,13 +1,12 @@
 "use client";
 
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
 import { useEffect, useState } from "react";
 
 type Testimonial = {
-    id: number
+    id: number;
     src: string;
 };
 
@@ -19,6 +18,16 @@ export const AnimatedTestimonials = ({
     autoplay?: boolean;
 }) => {
     const [active, setActive] = useState(0);
+    const [rotationValues, setRotationValues] = useState<number[]>([]);
+
+    // Initialize rotation values on component mount
+    useEffect(() => {
+        setRotationValues(
+            Array(testimonials.length)
+                .fill(0)
+                .map(() => Math.floor(Math.random() * 21) - 10)
+        );
+    }, [testimonials.length]);
 
     const handleNext = () => {
         setActive((prev) => (prev + 1) % testimonials.length);
@@ -39,11 +48,8 @@ export const AnimatedTestimonials = ({
         }
     }, [autoplay]);
 
-    const randomRotateY = () => {
-        return Math.floor(Math.random() * 21) - 10;
-    };
     return (
-        <div className="relative px-4 mx-auto py-10 lg:py-20 antialiased w-[400px] lg:w-[500px] md:px-8 lg:px-12">
+        <div className="relative px-4 mx-auto py-10 lg:py-20 antialiased w-[400px] xl:w-[500px] md:px-8 lg:px-12">
             <div className="relative grid grid-cols-1 gap-30 lg:gap-40">
                 <div>
                     <div className="relative h-80 w-full">
@@ -55,13 +61,13 @@ export const AnimatedTestimonials = ({
                                         opacity: 0,
                                         scale: 0.9,
                                         z: -100,
-                                        rotate: randomRotateY(),
+                                        rotate: rotationValues[index] || 0,
                                     }}
                                     animate={{
                                         opacity: isActive(index) ? 1 : 0.7,
                                         scale: isActive(index) ? 1 : 0.95,
                                         z: isActive(index) ? 0 : -100,
-                                        rotate: isActive(index) ? 0 : randomRotateY(),
+                                        rotate: isActive(index) ? 0 : rotationValues[index] || 0,
                                         zIndex: isActive(index)
                                             ? 40
                                             : testimonials.length + 2 - index,
@@ -71,7 +77,7 @@ export const AnimatedTestimonials = ({
                                         opacity: 0,
                                         scale: 0.9,
                                         z: 100,
-                                        rotate: randomRotateY(),
+                                        rotate: rotationValues[index] || 0,
                                     }}
                                     transition={{
                                         duration: 0.4,
@@ -83,7 +89,7 @@ export const AnimatedTestimonials = ({
                                         <div className="w-full bg-white/40 rounded-3xl backdrop-blur-md h-[440px] p-3">
                                             <Image
                                                 src={testimonial.src}
-                                                alt={`this is ${testimonial.id}`}
+                                                alt={`Testimonial ${testimonial.id}`}
                                                 width={500}
                                                 height={500}
                                                 draggable={false}
@@ -114,4 +120,3 @@ export const AnimatedTestimonials = ({
         </div>
     );
 };
-
