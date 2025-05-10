@@ -24,14 +24,14 @@ const LandingHome = () => {
                 <Navbar />
             </div>
 
-            <div className="relative flex flex-col lg:flex-row justify-between w-[90%] lg:w-[70%] lg:mx-0 left-1/2 -translate-x-[50%]">
+            <div className="relative flex flex-col lg:flex-row justify-between w-[90%] lg:w-[70%] mt-10  xl:mt-40 lg:mx-0 left-1/2 -translate-x-[50%]">
 
-                <div className="lg:hidden block">
+                <div className="lg:hidden block pt-20">
                     <AnimatedTestimonials testimonials={testimonials} />
                 </div>
 
                 <div className="flex flex-col ">
-                    <div className="text-8xl lg:text-[150px] xl:[200px] text-black font-instrument lg:mt-42">
+                    <div className="text-8xl lg:text-[150px] xl:[200px] text-black font-instrument -mt-20 md:mt-50">
                         mexico
                     </div>
 
