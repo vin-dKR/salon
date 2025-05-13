@@ -8,6 +8,7 @@ interface InputProps {
     type: 'text' | 'email' | 'tel' | 'date' | 'time' | 'select';
     options?: string[]; // For select type
     value?: string;
+    name: string; // Made required
     onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
 }
 
@@ -17,6 +18,7 @@ const Input: React.FC<InputProps> = ({
     type,
     options = [],
     value,
+    name,
     onChange,
 }) => {
     return (
@@ -46,6 +48,7 @@ const Input: React.FC<InputProps> = ({
                             className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-black/60 rounded-[6px] px-2 appearance-none cursor-pointer"
                             value={value}
                             onChange={onChange}
+                            name={name}
                             style={{
                                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236B7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                                 backgroundPosition: 'right 0.5rem center',
@@ -75,6 +78,7 @@ const Input: React.FC<InputProps> = ({
                         placeholder={placeholder}
                         value={value}
                         onChange={onChange}
+                        name={name}
                         className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-black/60 rounded-[6px] px-2"
                     />
                 )}

@@ -2,8 +2,33 @@
 import Image from "next/image"
 import Input from "./Input"
 import Button from "./Button"
+import { useState } from "react"
 
 const Appointment = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        serviceType: "",
+        email: "",
+        date: "",
+        time: "",
+    })
+
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    ) => {
+        const { name, value } = e.target
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }))
+    }
+
+    // Handle form submission
+    const handleSubmit = () => {
+        console.log("Form Data:", formData)
+        alert("Form submitted! Check console for data.")
+    }
+
     return (
         <div className="relative mt-40 w-[90%] xl:w-[60%] mx-auto rounded-3xl border border-white/20 overflow-hidden">
             <div className="absolute bg-[url(/svgs/rays.svg)] w-[100%] bg-no-repeat bg-cover bg-theme h-[100%] z-0" />
@@ -27,7 +52,9 @@ const Appointment = () => {
                                 maxWidth="100%"
                                 label="Name"
                                 placeholder="enter the name"
-                                type="email"
+                                type="text"
+                                name="name"
+                                onChange={handleInputChange}
                             />
 
                             <Input
@@ -36,6 +63,9 @@ const Appointment = () => {
                                 placeholder="service type"
                                 type="select"
                                 options={['make up', 'spa', 'pre bridal']}
+                                name="serviceType"
+                                value={formData.serviceType}
+                                onChange={handleInputChange}
                             />
                         </div>
 
@@ -45,6 +75,9 @@ const Appointment = () => {
                                 label="Email Address"
                                 placeholder="Enter your email"
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
                             />
                         </div>
 
@@ -53,18 +86,24 @@ const Appointment = () => {
                                 maxWidth="100%"
                                 label="Select Date"
                                 type="date"
+                                name="date"
+                                value={formData.date}
+                                onChange={handleInputChange}
                             />
                             <Input
                                 maxWidth="100%"
                                 label="Select Time"
                                 type="time"
+                                name="time"
+                                value={formData.time}
+                                onChange={handleInputChange}
                             />
                         </div>
                     </div>
                     <Button
                         maxWidth="100%"
                         label="Submit"
-                        onClick={() => alert('Button clicked!')}
+                        onClick={handleSubmit}
                     />
                 </div>
             </div>
