@@ -11,6 +11,7 @@
   --font-spring: "FontspringBd", "sans-serif";
   --font-instrument: "Instrument", "sans-serif";
   --font-disca: "Disca", "sans-serif";
+  --font-retro: "Retro", "sans-serif";
   --font-thebocone: "TheBocone", "sans-serif";
 }
 
@@ -72,4 +73,12 @@ body {
   font-weight: 200 700;
   font-display: swap;
   src: url("/fonts/disca.otf")
+}
+
+@font-face {
+  font-family: Retro;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/Retro.ttf")
 }

@@ -32,11 +32,11 @@ const LandingHome = () => {
 
                 <div className="flex flex-col ">
                     <div className="text-8xl lg:text-[150px] xl:[200px] text-black font-instrument -mt-20 md:mt-50">
-                        mexico
+                        maxico
                     </div>
 
                     <h1 className="
-                    text-9xl lg:text-[150px] xl:text-[200px] font-bold font-thebocone
+                    text-9xl lg:text-[150px] xl:text-[200px] font-bold font-retro
                     text-transparent
                     bg-clip-text
                     bg-[url(/imgs/hair.png)]
