@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
     return (
         <div
-            className={`relative self-end w-80 p-[1px] rounded-lg ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg'
+            className={`relative self-end w-full lg:w-80 p-[1px] rounded-lg mb-4 ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg'
                 }`}
             style={{ maxWidth, height: '48px' }}
         >
@@ -24,13 +24,6 @@ const Button: React.FC<ButtonProps> = ({
             <div className="absolute inset-[1px] bg-gradient-to-br from-white to-pink-500 rounded-[7px] overflow-hidden z-0">
                 <div className="absolute inset-[2px] bg-gradient-to-tr from-white to-pink-500 filter blur-xs rounded-[7px] z-0" />
             </div>
-            {/*
-
-            <div
-                className={`absolute inset-[2px] bg-pink-600/70 blur-md rounded-[6px] z-10 ${disabled ? 'opacity-50' : ''
-                    }`}
-            />
-            */}
 
             {/* Button content */}
             <button

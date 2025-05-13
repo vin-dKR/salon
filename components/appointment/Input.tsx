@@ -43,7 +43,7 @@ const Input: React.FC<InputProps> = ({
                 {type === 'select' ? (
                     <div className="relative w-[200px]">
                         <select
-                            className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-gray-400 rounded-[6px] px-2 appearance-none cursor-pointer"
+                            className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-black/60 rounded-[6px] px-2 appearance-none cursor-pointer"
                             value={value}
                             onChange={onChange}
                             style={{
@@ -75,7 +75,7 @@ const Input: React.FC<InputProps> = ({
                         placeholder={placeholder}
                         value={value}
                         onChange={onChange}
-                        className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-gray-400 rounded-[6px] px-2"
+                        className="w-full h-full bg-transparent outline-none text-gray-800 placeholder-black/60 rounded-[6px] px-2"
                     />
                 )}
             </div>
